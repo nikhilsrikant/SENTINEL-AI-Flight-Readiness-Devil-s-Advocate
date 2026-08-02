@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { GraniteAttribution } from '@/components/shared/GraniteAttribution';
 
 const modules = [
   {
@@ -78,6 +79,17 @@ const modules = [
   },
 ];
 
+const systemStatuses = [
+  { name: "Devil's Advocate", status: 'nominal' },
+  { name: 'Anomaly Tracker', status: 'nominal' },
+  { name: 'Mission Planner', status: 'nominal' },
+  { name: 'Orbital Monitor', status: 'nominal' },
+  { name: 'Telemetry Engine', status: 'nominal' },
+  { name: 'Knowledge Graph', status: 'nominal' },
+  { name: 'Space Academy', status: 'nominal' },
+  { name: 'IBM Granite AI', status: 'nominal' },
+];
+
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -127,6 +139,50 @@ export default function HomePage() {
         </div>
       </motion.div>
 
+      {/* Key Stats */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.3 }}
+        className="grid grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto"
+      >
+        <div className="bg-card rounded-lg border border-border p-4 text-center">
+          <div className="text-2xl font-mono font-bold text-granite">40+</div>
+          <div className="text-xs text-muted-foreground mt-1">Incidents Analyzed</div>
+        </div>
+        <div className="bg-card rounded-lg border border-border p-4 text-center">
+          <div className="text-2xl font-mono font-bold text-granite">50+</div>
+          <div className="text-xs text-muted-foreground mt-1">Years of Data</div>
+        </div>
+        <div className="bg-card rounded-lg border border-border p-4 text-center">
+          <div className="text-2xl font-mono font-bold text-granite">7</div>
+          <div className="text-xs text-muted-foreground mt-1">Active Modules</div>
+        </div>
+      </motion.div>
+
+      {/* System Status Indicators */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+        className="bg-card rounded-lg border border-border p-4 mb-8"
+      >
+        <h2 className="text-sm font-semibold mb-3 text-muted-foreground uppercase tracking-wide">
+          System Status
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+          {systemStatuses.map((sys) => (
+            <div
+              key={sys.name}
+              className="flex items-center gap-2 px-3 py-2 rounded bg-secondary/50"
+            >
+              <div className="w-2 h-2 rounded-full bg-status-nominal" />
+              <span className="text-xs font-mono truncate">{sys.name}</span>
+            </div>
+          ))}
+        </div>
+      </motion.div>
+
       {/* Module Grid */}
       <motion.div
         variants={container}
@@ -171,9 +227,7 @@ export default function HomePage() {
       {/* Bottom Attribution */}
       <div className="mt-12 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-granite/10 border border-granite/20">
-          <span className="text-granite text-sm font-medium">
-            Powered by IBM Granite
-          </span>
+          <GraniteAttribution />
           <span className="text-xs text-muted-foreground">via watsonx</span>
         </div>
       </div>
