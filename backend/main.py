@@ -219,6 +219,12 @@ async def root():
 # ---------------------------------------------------------------------------
 
 from backend.routers.devils_advocate import router as devils_advocate_router
+from backend.routers.anomaly_tracker import router as anomaly_tracker_router
+from backend.routers.knowledge_graph import router as knowledge_graph_router
+from backend.routers.mission_planner import router as mission_planner_router
+from backend.routers.orbital_monitor import router as orbital_monitor_router
+from backend.routers.space_academy import router as space_academy_router
+from backend.routers.telemetry_engine import router as telemetry_engine_router
 
 app.include_router(
     devils_advocate_router,
@@ -226,18 +232,38 @@ app.include_router(
     tags=["Devil's Advocate"],
 )
 
-# Placeholder for future module routers:
-# from backend.routers import (
-#     anomaly_tracker,
-#     mission_planner,
-#     orbital_monitor,
-#     telemetry_engine,
-#     knowledge_graph,
-#     space_academy,
-# )
-# app.include_router(anomaly_tracker.router, prefix="/api/v1/anomaly_tracker", tags=["Anomaly Tracker"])
-# app.include_router(mission_planner.router, prefix="/api/v1/mission_planner", tags=["Mission Planner"])
-# app.include_router(orbital_monitor.router, prefix="/api/v1/orbital_monitor", tags=["Orbital Monitor"])
-# app.include_router(telemetry_engine.router, prefix="/api/v1/telemetry_engine", tags=["Telemetry Engine"])
-# app.include_router(knowledge_graph.router, prefix="/api/v1/knowledge_graph", tags=["Knowledge Graph"])
-# app.include_router(space_academy.router, prefix="/api/v1/space_academy", tags=["Space Academy"])
+app.include_router(
+    anomaly_tracker_router,
+    prefix="/api/v1/anomaly_tracker",
+    tags=["Anomaly Tracker"],
+)
+
+app.include_router(
+    knowledge_graph_router,
+    prefix="/api/v1/knowledge_graph",
+    tags=["Knowledge Graph"],
+)
+
+app.include_router(
+    mission_planner_router,
+    prefix="/api/v1/mission_planner",
+    tags=["Mission Planner"],
+)
+
+app.include_router(
+    orbital_monitor_router,
+    prefix="/api/v1/orbital_monitor",
+    tags=["Orbital Monitor"],
+)
+
+app.include_router(
+    space_academy_router,
+    prefix="/api/v1/space_academy",
+    tags=["Space Academy"],
+)
+
+app.include_router(
+    telemetry_engine_router,
+    prefix="/api/v1/telemetry_engine",
+    tags=["Telemetry Engine"],
+)
