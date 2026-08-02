@@ -215,11 +215,19 @@ async def root():
 
 
 # ---------------------------------------------------------------------------
-# Module Router Registration (placeholder - routers added in later tasks)
+# Module Router Registration
 # ---------------------------------------------------------------------------
 
+from backend.routers.devils_advocate import router as devils_advocate_router
+
+app.include_router(
+    devils_advocate_router,
+    prefix="/api/v1/devils_advocate",
+    tags=["Devil's Advocate"],
+)
+
+# Placeholder for future module routers:
 # from backend.routers import (
-#     devils_advocate,
 #     anomaly_tracker,
 #     mission_planner,
 #     orbital_monitor,
@@ -227,7 +235,6 @@ async def root():
 #     knowledge_graph,
 #     space_academy,
 # )
-# app.include_router(devils_advocate.router, prefix="/api/v1/devils_advocate", tags=["Devil's Advocate"])
 # app.include_router(anomaly_tracker.router, prefix="/api/v1/anomaly_tracker", tags=["Anomaly Tracker"])
 # app.include_router(mission_planner.router, prefix="/api/v1/mission_planner", tags=["Mission Planner"])
 # app.include_router(orbital_monitor.router, prefix="/api/v1/orbital_monitor", tags=["Orbital Monitor"])
