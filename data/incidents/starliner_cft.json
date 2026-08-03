@@ -1,0 +1,81 @@
+{
+  "id": "INC-003",
+  "name": "Boeing Starliner Crew Flight Test Anomalies",
+  "mission": "Starliner CFT (Boe-CFT)",
+  "date": "2024-06-05",
+  "vehicle": "CST-100 Starliner Calypso",
+  "outcome": "Crew stranded on ISS; vehicle returned empty; crew rescue via SpaceX Dragon",
+  "crew_size": 2,
+  "fatalities": 0,
+  "phase": "On-orbit operations - propulsion system degradation prevented safe crew return",
+  "summary": "Boeing's Starliner Crew Flight Test launched astronauts Butch Wilmore and Suni Williams to the ISS on June 5, 2024, for a planned 8-day mission. Prior to launch, a helium leak was detected in the service module but deemed acceptable. During flight, additional helium leaks developed and 5 of 28 reaction control system thrusters experienced degraded performance. After months of analysis, NASA determined the vehicle was too risky for crew return. The crew remained on ISS for approximately 8 months, returning on SpaceX Crew Dragon in February 2025. Starliner returned autonomously on September 6, 2024.",
+  "root_causes": {
+    "technical": "Helium leaks in the service module propulsion system, likely caused by degraded Teflon seals in the helium distribution manifold. Reaction control system thrusters overheated due to thermal effects in the Starliner's doghouse (thruster pod enclosure), causing swelling of Teflon seals and reduced thrust. The issues were interrelated through the common propulsion system architecture.",
+    "organizational": "A decade of schedule delays, cost overruns ($1.5B+ above fixed-price contract), and competitive pressure from SpaceX (operational since 2020) created enormous go-fever. The decision to fly with a known helium leak directly parallels the Challenger O-ring decision -- proceeding with a known anomaly under schedule pressure. Boeing's organizational culture after OFT-1 failures (80 corrective actions) may not have been fully reformed.",
+    "cultural": "The normalization pattern is striking: pad abort test with parachute failure declared successful, OFT-2 with thruster failures declared successful, and finally CFT launched with known helium leak. Each acceptance of degraded performance lowered the threshold for the next acceptance. Classic Vaughan normalization of deviance progression."
+  },
+  "key_decisions": [
+    {
+      "date": "2024-05-06",
+      "decision": "Proceed with crewed launch despite known helium leak",
+      "actors": ["Boeing Engineering", "NASA Commercial Crew Program", "Mission Management"],
+      "outcome": "Helium leak rate assessed as within acceptable margins; decision to fly with anomaly on first crewed flight",
+      "sentinel_score": 0.88
+    },
+    {
+      "date": "2024-06-18",
+      "decision": "Extend ISS stay to analyze thruster and helium issues",
+      "actors": ["NASA", "Boeing", "ISS Program"],
+      "outcome": "Originally 8-day mission extended indefinitely while ground testing conducted",
+      "sentinel_score": 0.72
+    },
+    {
+      "date": "2024-08-24",
+      "decision": "Starliner too risky for crew return - use SpaceX Dragon",
+      "actors": ["NASA Administrator", "Commercial Crew Program", "ISS Program", "Safety Panel"],
+      "outcome": "NASA determines Starliner propulsion system modeling insufficient to guarantee safe crew return; alternate return on SpaceX Crew-9",
+      "sentinel_score": 0.95
+    }
+  ],
+  "warning_signs": [
+    "OFT-1 (2019): Two critical software defects nearly causing loss of vehicle",
+    "Pad Abort Test (2019): 1 of 3 parachutes failed to deploy",
+    "OFT-2 prep (2021): 13 oxidizer valves corroded - returned to factory",
+    "OFT-2 (2022): 2 of 12 orbital thrusters failed in flight",
+    "CFT pre-flight: Helium leak detected and accepted for crewed flight",
+    "CFT in-flight: 5 additional helium leaks developed",
+    "CFT in-flight: 5 of 28 RCS thrusters degraded",
+    "10-year development delay creating extreme schedule pressure",
+    "SpaceX operational since 2020 creating competitive go-fever"
+  ],
+  "organizational_failures": [
+    "Launching crew with known propulsion system leak (direct Challenger parallel)",
+    "Decade of accumulated schedule pressure creating go-fever environment",
+    "Progressive acceptance of degraded test outcomes (pad abort, OFT-2)",
+    "Competitive dynamics with SpaceX influencing safety margins",
+    "Fixed-price contract creating financial incentive to proceed despite risk",
+    "Insufficient modeling capability for thruster thermal behavior",
+    "Failure to weight cumulative program anomalies in flight readiness assessment"
+  ],
+  "lessons_learned": [
+    "Known anomalies on crewed vehicles must trigger NO-GO unless fully characterized",
+    "Cumulative program risk must be assessed holistically, not per-anomaly",
+    "Schedule pressure from delays makes go-fever more dangerous, not less",
+    "Competitive dynamics must be explicitly excluded from safety decisions",
+    "Financial contract structure can create perverse safety incentives",
+    "Progressive normalization across test campaign must be actively monitored",
+    "A Devil's Advocate function with formal authority could have prevented the launch decision"
+  ],
+  "sentinel_relevance": {
+    "pattern_type": "go_fever_with_normalization",
+    "go_fever_score": 0.95,
+    "preventability_score": 0.90,
+    "key_parallel": "Most direct modern parallel to Challenger: known propulsion deficiency accepted for crewed flight under extreme schedule pressure after decade of delays. Progressive normalization across multiple test anomalies."
+  },
+  "references": [
+    "NASA Commercial Crew Program Press Briefings (June-August 2024)",
+    "NASA OIG Report on Commercial Crew Program (2024)",
+    "Boeing Starliner OFT-1 Joint Independent Review (2020)",
+    "Ars Technica comprehensive Starliner CFT coverage (2024)"
+  ]
+}
