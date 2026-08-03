@@ -4,6 +4,8 @@ Provides endpoints for cumulative risk analysis, go-fever bias detection,
 risk timelines, and the Starliner case study demonstration.
 """
 
+from __future__ import annotations
+
 from typing import Any
 
 from fastapi import APIRouter, HTTPException, status

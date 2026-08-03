@@ -1,5 +1,7 @@
 """Models for the Knowledge Graph module."""
 
+from __future__ import annotations
+
 from pydantic import BaseModel, Field
 
 from backend.models.shared import GraniteAttribution

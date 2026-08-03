@@ -4,6 +4,8 @@ Supports up to 50 concurrent connections with a 5-minute message buffer
 for clients that temporarily disconnect.
 """
 
+from __future__ import annotations
+
 import logging
 import time
 import uuid

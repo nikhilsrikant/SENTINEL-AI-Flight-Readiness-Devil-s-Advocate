@@ -4,6 +4,8 @@ Provides endpoints for mission plan generation, retrieval,
 and pre-flight checklist creation.
 """
 
+from __future__ import annotations
+
 from typing import Any
 
 from fastapi import APIRouter, HTTPException, status

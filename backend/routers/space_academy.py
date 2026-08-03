@@ -4,6 +4,8 @@ Provides endpoints for training scenarios, interactive simulations,
 and AI-generated quizzes for spaceflight safety education.
 """
 
+from __future__ import annotations
+
 from typing import Any
 
 from fastapi import APIRouter, HTTPException, Query, status

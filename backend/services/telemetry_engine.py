@@ -4,6 +4,8 @@ Provides plain-English telemetry translation, trend classification,
 and actionable recommendations from spacecraft subsystem data.
 """
 
+from __future__ import annotations
+
 import asyncio
 import logging
 import random

@@ -1,5 +1,7 @@
 """Shared enumerations and scoring utilities for the SENTINEL platform."""
 
+from __future__ import annotations
+
 from enum import Enum
 
 

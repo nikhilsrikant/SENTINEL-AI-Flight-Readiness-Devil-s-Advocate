@@ -4,6 +4,8 @@ Provides endpoints for semantic search, graph visualization,
 and incident retrieval from the spaceflight knowledge base.
 """
 
+from __future__ import annotations
+
 from typing import Any
 
 from fastapi import APIRouter, HTTPException, Query, status

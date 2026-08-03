@@ -4,6 +4,8 @@ Provides endpoints for telemetry translation, trend classification,
 recommendations, and a WebSocket stream for real-time data.
 """
 
+from __future__ import annotations
+
 import asyncio
 import json
 from typing import Any

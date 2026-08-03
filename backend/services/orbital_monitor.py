@@ -4,6 +4,8 @@ Provides tracked object catalog, conjunction assessment,
 and collision risk analysis using pre-computed orbital data.
 """
 
+from __future__ import annotations
+
 import asyncio
 import logging
 import math

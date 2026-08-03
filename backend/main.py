@@ -8,6 +8,8 @@ Starts the FastAPI application with:
 - Custom exception handlers with standard error envelope
 """
 
+from __future__ import annotations
+
 import uuid
 from contextlib import asynccontextmanager
 from typing import Any

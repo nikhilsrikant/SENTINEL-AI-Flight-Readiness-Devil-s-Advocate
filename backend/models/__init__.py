@@ -1,5 +1,7 @@
 """Pydantic data models for request/response schemas."""
 
+from __future__ import annotations
+
 from backend.models.enums import (
     ErrorCategory,
     Provider,

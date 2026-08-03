@@ -4,6 +4,8 @@ Provides historical decision scenarios, interactive simulations,
 and AI-generated quizzes for spaceflight safety education.
 """
 
+from __future__ import annotations
+
 import asyncio
 import logging
 import uuid

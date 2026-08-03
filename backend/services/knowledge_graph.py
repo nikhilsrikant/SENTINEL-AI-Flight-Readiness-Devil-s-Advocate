@@ -4,6 +4,8 @@ Provides semantic search over a corpus of historical spaceflight
 incidents and generates knowledge graph visualizations.
 """
 
+from __future__ import annotations
+
 import asyncio
 import logging
 import uuid

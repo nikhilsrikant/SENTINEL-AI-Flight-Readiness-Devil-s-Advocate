@@ -3,6 +3,8 @@
 Uses pydantic-settings for type-safe environment variable parsing with defaults.
 """
 
+from __future__ import annotations
+
 from pydantic_settings import BaseSettings
 
 

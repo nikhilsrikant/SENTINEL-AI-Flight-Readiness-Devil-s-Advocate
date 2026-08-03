@@ -4,6 +4,8 @@ Implements cumulative risk scoring, go-fever bias detection,
 and full risk analysis report generation using IBM Granite AI.
 """
 
+from __future__ import annotations
+
 import asyncio
 import logging
 import uuid

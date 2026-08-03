@@ -4,6 +4,8 @@ Provides endpoints for telemetry ingestion, pattern analysis,
 and escalation alerts for cross-mission anomaly tracking.
 """
 
+from __future__ import annotations
+
 from typing import Any
 
 from fastapi import APIRouter, HTTPException, status

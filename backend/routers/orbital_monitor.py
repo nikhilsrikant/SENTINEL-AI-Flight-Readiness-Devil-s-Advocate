@@ -4,6 +4,8 @@ Provides endpoints for tracked object catalog, conjunction events,
 and collision risk assessment.
 """
 
+from __future__ import annotations
+
 from typing import Any
 
 from fastapi import APIRouter, HTTPException, status

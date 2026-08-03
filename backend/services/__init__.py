@@ -1,5 +1,7 @@
 """Business logic services for all 7 SENTINEL modules."""
 
+from __future__ import annotations
+
 from backend.services.anomaly_tracker import AnomalyTrackerService
 from backend.services.devils_advocate import DevilsAdvocateService
 from backend.services.knowledge_graph import KnowledgeGraphService

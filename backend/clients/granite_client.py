@@ -5,6 +5,8 @@ Each provider has a 10-second timeout. On failure, a FallbackEvent is logged
 and the next provider in the chain is attempted.
 """
 
+from __future__ import annotations
+
 import asyncio
 import logging
 import random

@@ -4,6 +4,8 @@ Provides mission plan generation, pre-flight checklist creation,
 and resource conflict detection with safety margin enforcement.
 """
 
+from __future__ import annotations
+
 import asyncio
 import logging
 import uuid
