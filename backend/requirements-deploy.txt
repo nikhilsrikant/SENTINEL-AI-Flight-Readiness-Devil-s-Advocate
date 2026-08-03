@@ -1,0 +1,17 @@
+# SENTINEL Platform - Deployment Dependencies (lightweight)
+# For full development deps, use requirements.txt
+
+# Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# Data Validation
+pydantic==2.5.2
+pydantic-settings==2.1.0
+
+# HTTP Client (for Granite provider calls)
+httpx==0.25.2
+
+# Environment & Configuration
+python-dotenv==1.0.0
