@@ -1,0 +1,15 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install",
+  "env": {
+    "NEXT_PUBLIC_API_URL": "https://sentinel-api.onrender.com/api/v1"
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://sentinel-api.onrender.com/api/:path*"
+    }
+  ]
+}

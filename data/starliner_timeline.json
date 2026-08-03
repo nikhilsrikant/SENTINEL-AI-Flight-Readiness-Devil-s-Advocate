@@ -1,0 +1,312 @@
+{
+  "mission": "Boeing Starliner Crew Flight Test (CFT)",
+  "vehicle": "CST-100 Starliner",
+  "operator": "Boeing",
+  "program": "NASA Commercial Crew Program",
+  "timeline_span": {
+    "start": "2014-09-16",
+    "end": "2025-02-01"
+  },
+  "events": [
+    {
+      "id": "SL-001",
+      "date": "2014-09-16",
+      "title": "Commercial Crew Contract Award",
+      "description": "NASA awards Boeing $4.2B for Commercial Crew Transportation Capability (CCtCap). Boeing selected alongside SpaceX to develop crew transportation to ISS.",
+      "category": "programmatic",
+      "severity": "nominal",
+      "cumulative_risk_score": 0.05,
+      "risk_factors": [],
+      "sentinel_analysis": "Baseline established. No risk indicators at contract award phase."
+    },
+    {
+      "id": "SL-002",
+      "date": "2018-03-01",
+      "title": "Pad Abort Test Delay",
+      "description": "Pad abort test originally scheduled for 2017 slips to 2019. First sign of schedule pressure accumulating in the program.",
+      "category": "schedule",
+      "severity": "advisory",
+      "cumulative_risk_score": 0.12,
+      "risk_factors": [
+        {
+          "factor": "schedule_pressure",
+          "weight": 0.6,
+          "description": "12-month delay in critical safety test"
+        }
+      ],
+      "sentinel_analysis": "Schedule slip in safety-critical testing pathway. Monitoring for normalization of delays."
+    },
+    {
+      "id": "SL-003",
+      "date": "2019-11-04",
+      "title": "Pad Abort Test - Anomaly",
+      "description": "Pad abort test conducted but only 2 of 3 parachutes deploy. Boeing attributes to pin retention issue. Test declared successful by Boeing despite anomaly.",
+      "category": "technical",
+      "severity": "caution",
+      "cumulative_risk_score": 0.25,
+      "risk_factors": [
+        {
+          "factor": "parachute_reliability",
+          "weight": 0.7,
+          "description": "33% parachute failure rate in abort scenario"
+        },
+        {
+          "factor": "success_criteria_flexibility",
+          "weight": 0.5,
+          "description": "Test declared successful despite anomaly - potential normalization"
+        }
+      ],
+      "sentinel_analysis": "CAUTION: Declaring a test successful when 1 of 3 parachutes failed to deploy shows potential normalization of deviance. This mirrors Columbia-era foam strike dismissals."
+    },
+    {
+      "id": "SL-004",
+      "date": "2019-12-20",
+      "title": "OFT-1 Mission - Critical Software Failures",
+      "description": "First uncrewed Orbital Flight Test. Mission timer error causes spacecraft to believe it is in wrong phase of flight, burning excessive propellant. Unable to reach ISS. Second software error discovered that could have caused catastrophic collision during separation.",
+      "category": "technical",
+      "severity": "critical",
+      "cumulative_risk_score": 0.48,
+      "risk_factors": [
+        {
+          "factor": "software_quality",
+          "weight": 0.9,
+          "description": "Two independent critical software defects in single mission"
+        },
+        {
+          "factor": "verification_gaps",
+          "weight": 0.85,
+          "description": "Defects not caught in ground testing - systematic V&V failure"
+        },
+        {
+          "factor": "organizational_process",
+          "weight": 0.7,
+          "description": "Independent review finds stovepiped testing practices"
+        }
+      ],
+      "sentinel_analysis": "CRITICAL: Two life-threatening software defects reaching flight represents a systemic verification failure. This is not a single-point problem but an organizational process breakdown. Devil's Advocate strongly recommends program-wide review before any crewed flight."
+    },
+    {
+      "id": "SL-005",
+      "date": "2020-02-07",
+      "title": "NASA Independent Review Findings",
+      "description": "Joint NASA-Boeing independent review identifies 80 recommendations. Finds Boeing's software testing was inadequate, organizational silos prevented cross-system verification.",
+      "category": "organizational",
+      "severity": "warning",
+      "cumulative_risk_score": 0.52,
+      "risk_factors": [
+        {
+          "factor": "organizational_structure",
+          "weight": 0.8,
+          "description": "80 corrective actions indicates systemic organizational issues"
+        },
+        {
+          "factor": "schedule_pressure",
+          "weight": 0.7,
+          "description": "Pressure to catch up with SpaceX may have contributed to verification shortcuts"
+        }
+      ],
+      "sentinel_analysis": "80 recommendations confirms systemic organizational dysfunction. Historical pattern match: pre-Challenger NASA had similar stovepiping issues. Cumulative risk trajectory is concerning."
+    },
+    {
+      "id": "SL-006",
+      "date": "2021-08-03",
+      "title": "OFT-2 Scrub - Valve Corrosion",
+      "description": "Second orbital flight test scrubbed on launch pad due to stuck propulsion valves. Investigation reveals moisture-induced corrosion in 13 oxidizer valves. Vehicle returned to factory.",
+      "category": "technical",
+      "severity": "warning",
+      "cumulative_risk_score": 0.61,
+      "risk_factors": [
+        {
+          "factor": "propulsion_reliability",
+          "weight": 0.8,
+          "description": "Systemic valve corrosion across multiple units"
+        },
+        {
+          "factor": "environmental_protection",
+          "weight": 0.7,
+          "description": "Inadequate moisture protection for flight-critical components"
+        },
+        {
+          "factor": "quality_control",
+          "weight": 0.75,
+          "description": "Corrosion not detected during pre-flight inspections"
+        }
+      ],
+      "sentinel_analysis": "WARNING: Systemic corrosion across 13 valves indicates design-level vulnerability. Combined with OFT-1 software issues, this represents a second major system-level failure class. Cumulative risk exceeding caution threshold."
+    },
+    {
+      "id": "SL-007",
+      "date": "2022-05-19",
+      "title": "OFT-2 Successful (with caveats)",
+      "description": "Second orbital flight test reaches ISS successfully. However, two orbital maneuvering thrusters fail during flight and several thermal protection tiles show damage.",
+      "category": "technical",
+      "severity": "caution",
+      "cumulative_risk_score": 0.58,
+      "risk_factors": [
+        {
+          "factor": "thruster_reliability",
+          "weight": 0.6,
+          "description": "2 of 12 orbital thrusters failed - 17% failure rate"
+        },
+        {
+          "factor": "thermal_protection",
+          "weight": 0.5,
+          "description": "Heat shield anomalies noted post-flight"
+        },
+        {
+          "factor": "normalization_risk",
+          "weight": 0.65,
+          "description": "Mission declared successful despite thruster and TPS issues"
+        }
+      ],
+      "sentinel_analysis": "CAUTION: Pattern of declaring missions successful despite significant anomalies continues. Thruster failures at 17% rate should not be normalized. TPS damage echoes Columbia foam strike normalization pattern."
+    },
+    {
+      "id": "SL-008",
+      "date": "2024-05-06",
+      "title": "CFT Launch - Helium Leak Detected Pre-Flight",
+      "description": "Small helium leak detected in service module propulsion system during pre-launch processing. Engineering team assesses leak rate as acceptable for mission. Decision made to proceed with crew aboard.",
+      "category": "technical",
+      "severity": "warning",
+      "cumulative_risk_score": 0.72,
+      "risk_factors": [
+        {
+          "factor": "propulsion_integrity",
+          "weight": 0.8,
+          "description": "Known helium leak in crew-rated vehicle at launch"
+        },
+        {
+          "factor": "go_fever",
+          "weight": 0.85,
+          "description": "Proceeding with known anomaly on crewed flight after 10-year delay"
+        },
+        {
+          "factor": "historical_parallel",
+          "weight": 0.9,
+          "description": "Direct parallel to Challenger O-ring erosion acceptance"
+        }
+      ],
+      "sentinel_analysis": "CRITICAL ALERT: Launching crew with a KNOWN propulsion system leak is a direct echo of the Challenger decision to launch with known O-ring erosion. Go-fever after 10 years of delays is maximum. Devil's Advocate recommends NO-GO."
+    },
+    {
+      "id": "SL-009",
+      "date": "2024-06-05",
+      "title": "CFT Crew Launch with Butch Wilmore and Suni Williams",
+      "description": "Starliner launches with crew for first time. Additional helium leaks develop during ascent. 5 of 28 reaction control thrusters experience issues during approach to ISS.",
+      "category": "technical",
+      "severity": "critical",
+      "cumulative_risk_score": 0.85,
+      "risk_factors": [
+        {
+          "factor": "helium_system_degradation",
+          "weight": 0.9,
+          "description": "Multiple new helium leaks developing in-flight"
+        },
+        {
+          "factor": "thruster_failures",
+          "weight": 0.85,
+          "description": "5 of 28 RCS thrusters degraded - 18% failure rate in-flight"
+        },
+        {
+          "factor": "crew_safety",
+          "weight": 0.95,
+          "description": "Crew aboard vehicle with cascading propulsion failures"
+        },
+        {
+          "factor": "return_capability",
+          "weight": 0.9,
+          "description": "Uncertainty about vehicle capability for safe crew return"
+        }
+      ],
+      "sentinel_analysis": "CRITICAL: Multiple cascading failures confirm pre-existing risk assessment. The known helium leak has propagated. Thruster failures repeat OFT-2 pattern at higher rate. Crew return capability is now uncertain. This validates Devil's Advocate NO-GO recommendation."
+    },
+    {
+      "id": "SL-010",
+      "date": "2024-08-24",
+      "title": "NASA Decision: Crew Returns on SpaceX Dragon",
+      "description": "After months of analysis, NASA decides Starliner is too risky for crew return. Wilmore and Williams will remain on ISS until February 2025 and return on SpaceX Crew Dragon. Starliner returns empty on September 6, 2024.",
+      "category": "programmatic",
+      "severity": "critical",
+      "cumulative_risk_score": 0.92,
+      "risk_factors": [
+        {
+          "factor": "vehicle_confidence",
+          "weight": 0.95,
+          "description": "Vehicle deemed too unsafe to return its own crew"
+        },
+        {
+          "factor": "program_failure",
+          "weight": 0.9,
+          "description": "10-year, $4.2B program unable to complete primary crew transport mission"
+        },
+        {
+          "factor": "organizational_blindness_confirmed",
+          "weight": 1.0,
+          "description": "Decision to launch with known issues proven catastrophically wrong"
+        }
+      ],
+      "sentinel_analysis": "OUTCOME VALIDATION: SENTINEL's Devil's Advocate was correct. The decision to launch with known helium leaks, after a history of thruster failures, valve corrosion, and software defects, was organizational blindness in action. The cumulative risk score had been above critical threshold since the pre-flight helium leak detection."
+    },
+    {
+      "id": "SL-011",
+      "date": "2025-02-01",
+      "title": "Crew Return on SpaceX Dragon (Projected)",
+      "description": "Wilmore and Williams return to Earth aboard SpaceX Crew-9 Dragon capsule after approximately 8 months on ISS. Original Starliner mission was planned for 8 days.",
+      "category": "programmatic",
+      "severity": "critical",
+      "cumulative_risk_score": 0.95,
+      "risk_factors": [
+        {
+          "factor": "mission_duration_deviation",
+          "weight": 0.8,
+          "description": "8-month mission vs planned 8-day mission - 30x duration overrun"
+        },
+        {
+          "factor": "crew_risk_exposure",
+          "weight": 0.85,
+          "description": "Extended ISS stay introduces additional long-duration risks"
+        }
+      ],
+      "sentinel_analysis": "FINAL ASSESSMENT: The Starliner CFT represents a textbook case of cumulative organizational blindness. SENTINEL's risk scoring model correctly identified critical thresholds at the pre-flight helium leak (SL-008, score 0.72) and escalating cascading failures (SL-009, score 0.85). A Devil's Advocate system operational during the launch decision would have provided the structured counter-argument needed to override go-fever."
+    }
+  ],
+  "risk_trajectory": {
+    "description": "Cumulative risk score over time showing monotonic increase with key inflection points",
+    "inflection_points": [
+      {
+        "event_id": "SL-004",
+        "score": 0.48,
+        "reason": "OFT-1 software failures reveal systemic V&V breakdown"
+      },
+      {
+        "event_id": "SL-008",
+        "score": 0.72,
+        "reason": "Known helium leak accepted for crewed flight - go-fever threshold"
+      },
+      {
+        "event_id": "SL-009",
+        "score": 0.85,
+        "reason": "In-flight cascading failures confirm pre-existing risks"
+      }
+    ],
+    "critical_threshold": 0.7,
+    "no_go_recommendation_point": "SL-008"
+  },
+  "organizational_patterns": {
+    "normalization_of_deviance": [
+      "OFT-1 pad abort declared successful with parachute failure",
+      "OFT-2 declared successful with thruster failures",
+      "Helium leak accepted as within tolerance for crewed flight"
+    ],
+    "schedule_pressure_indicators": [
+      "10-year program delay creating extreme pressure to fly",
+      "SpaceX operational for 4 years creating competitive pressure",
+      "NASA budget pressure for Commercial Crew milestones"
+    ],
+    "communication_failures": [
+      "Stovepiped testing practices (OFT-1 review finding)",
+      "Engineering concerns about helium leak overridden by management consensus",
+      "Thruster degradation pattern from OFT-2 not weighted sufficiently in CFT readiness review"
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "INC-002",
+  "name": "Space Shuttle Columbia Disaster",
+  "mission": "STS-107",
+  "date": "2003-02-01",
+  "vehicle": "Space Shuttle Columbia (OV-102)",
+  "outcome": "Loss of vehicle and crew during reentry",
+  "crew_size": 7,
+  "fatalities": 7,
+  "phase": "Reentry - vehicle breakup over Texas at 207,135 feet",
+  "summary": "Space Shuttle Columbia disintegrated during atmospheric reentry on February 1, 2003. During launch 16 days earlier, a piece of insulating foam from the External Tank's bipod ramp struck the leading edge of the left wing, creating a breach in the Reinforced Carbon-Carbon (RCC) thermal protection panel. During reentry, superheated plasma entered through the breach, melting the wing's aluminum structure and causing loss of vehicle control.",
+  "root_causes": {
+    "technical": "A 1.67-pound piece of ET bipod ramp foam struck RCC panel 8 on the left wing leading edge at approximately 545 mph relative velocity, creating a 6-10 inch breach. During reentry, atmospheric plasma at 3000+ degrees F entered through the breach and progressively destroyed the wing structure.",
+    "organizational": "NASA's organizational culture had normalized foam strikes as a maintenance issue rather than a safety-of-flight concern. Over 22 previous missions, foam shedding was observed and progressively accepted. The Debris Assessment Team's requests for imagery of potential wing damage were denied by mission management.",
+    "cultural": "The Columbia Accident Investigation Board (CAIB) found that NASA's culture was 'as much a cause of the accident as the foam.' Schedule pressure, budget constraints, and institutional arrogance combined to create an environment where dissenting safety concerns were systematically suppressed."
+  },
+  "key_decisions": [
+    {
+      "date": "2003-01-16",
+      "decision": "Launch with known foam shedding risk",
+      "actors": ["Shuttle Program Office", "Mission Management Team"],
+      "outcome": "Foam shedding from ET bipod ramp was a known recurring issue accepted as non-safety-critical",
+      "sentinel_score": 0.78
+    },
+    {
+      "date": "2003-01-22",
+      "decision": "Denial of imagery request for wing damage assessment",
+      "actors": ["Mission Management Team", "Department of Defense liaison"],
+      "outcome": "Debris Assessment Team's request for satellite or ground imagery of Columbia's wing was denied. Management decided foam could not have caused critical damage.",
+      "sentinel_score": 0.94
+    },
+    {
+      "date": "2003-01-24",
+      "decision": "Foam impact analysis closed with no action",
+      "actors": ["Mission Management Team", "Debris Assessment Team"],
+      "outcome": "Crater analysis tool (designed for tile, not RCC) used to conclude damage was acceptable. Team's concerns overridden.",
+      "sentinel_score": 0.91
+    }
+  ],
+  "warning_signs": [
+    "Foam shedding observed on 65 of 79 previous shuttle missions (82%)",
+    "STS-112 (October 2002) experienced significant bipod ramp foam loss",
+    "Bipod ramp foam loss designated an 'In-Family' anomaly rather than flight safety issue",
+    "Debris Assessment Team identified potential for RCC panel damage within 2 days of launch",
+    "Engineers requested DOD imagery to assess damage - denied by management",
+    "Crater analysis tool was known to be invalid for RCC panel impacts"
+  ],
+  "organizational_failures": [
+    "Normalization of foam shedding over 22 years and 112 missions",
+    "Management acted as technical authority, overriding engineering analysis",
+    "Debris Assessment Team requests for data actively blocked",
+    "Program schedule and budget pressures override safety processes",
+    "Lack of independent technical authority with power to override program decisions",
+    "Analytic tools known to be inadequate used to close safety concerns",
+    "Cultural barrier between engineering workforce and management hierarchy"
+  ],
+  "lessons_learned": [
+    "Known recurring anomalies must be treated as unresolved safety risks until root-caused",
+    "Requests for additional safety data must never be denied by program management",
+    "Independent technical authority must have absolute power over safety decisions",
+    "Analysis tools must be validated for the specific failure mode being assessed",
+    "Organizational culture is a safety-critical system component, not just hardware",
+    "Schedule and budget pressure create invisible normalization of unacceptable risk",
+    "The absence of evidence of danger is not evidence of absence of danger"
+  ],
+  "sentinel_relevance": {
+    "pattern_type": "normalization_of_deviance",
+    "go_fever_score": 0.75,
+    "preventability_score": 0.92,
+    "key_parallel": "Known recurring technical issue normalized over many flights until catastrophic consequence. Requests for safety data denied by management."
+  },
+  "references": [
+    "Columbia Accident Investigation Board (CAIB) Report (2003)",
+    "NASA SP-2009-566: Columbia Crew Survival Investigation Report",
+    "Diane Vaughan, 'System Effects: On Slippery Slopes, Repeating Negative Patterns, and Learning from Mistake' (2005)"
+  ]
+}

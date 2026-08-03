@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import Link from 'next/link';
 import './globals.css';
+import { ClientProviders } from './ClientProviders';
 
 // ---------------------------------------------------------------------------
 // Font Configuration
@@ -141,8 +142,24 @@ export default function RootLayout({
               ))}
             </nav>
 
-            {/* Right Side Status */}
+            {/* Right Side Status & Voice */}
             <div className="ml-auto flex items-center gap-3">
+              {/* Cmd+K hint */}
+              <button
+                className="hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-muted-foreground hover:bg-white/10 transition-colors"
+                onClick={() => {
+                  const event = new KeyboardEvent('keydown', {
+                    key: 'k',
+                    metaKey: true,
+                    bubbles: true,
+                  });
+                  document.dispatchEvent(event);
+                }}
+              >
+                <span>Search</span>
+                <kbd className="px-1 py-0.5 rounded bg-white/5 text-[10px] font-mono">⌘K</kbd>
+              </button>
+
               <div className="flex items-center gap-1.5">
                 <div className="w-2 h-2 rounded-full bg-status-nominal animate-pulse-glow" />
                 <span className="text-xs text-muted-foreground font-mono hidden sm:block">
@@ -156,8 +173,8 @@ export default function RootLayout({
           </div>
         </header>
 
-        {/* Main Content Area */}
-        <main className="flex-1">{children}</main>
+        {/* Client Providers wrapping Breadcrumb, main content, and floating widgets */}
+        <ClientProviders>{children}</ClientProviders>
 
         {/* Footer */}
         <footer className="border-t border-border/40 py-4 px-4">

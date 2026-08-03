@@ -36,10 +36,51 @@ export function getSeverityFromScore(score: number): SeverityLevel {
 }
 
 /**
- * Format a risk score for display.
+ * Format a risk score for display (e.g., 0.75 -> "0.75").
  */
 export function formatRiskScore(score: number): string {
   return score.toFixed(2);
+}
+
+/**
+ * Format a risk score as a percentage (e.g., 0.75 -> "75%").
+ */
+export function formatRiskPercent(score: number): string {
+  return `${Math.round(score * 100)}%`;
+}
+
+/**
+ * Format a date string for display.
+ * Handles ISO strings and returns a human-readable format.
+ */
+export function formatDate(dateString: string, options?: Intl.DateTimeFormatOptions): string {
+  const defaults: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  };
+  try {
+    return new Date(dateString).toLocaleDateString('en-US', options || defaults);
+  } catch {
+    return dateString;
+  }
+}
+
+/**
+ * Format a date string showing only the date portion (no time).
+ */
+export function formatDateShort(dateString: string): string {
+  return formatDate(dateString, { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+/**
+ * Truncate text to a specified length with ellipsis.
+ */
+export function truncateText(text: string, maxLength: number): string {
+  if (text.length <= maxLength) return text;
+  return text.slice(0, maxLength - 3).trimEnd() + '...';
 }
 
 /**
@@ -47,6 +88,20 @@ export function formatRiskScore(score: number): string {
  */
 export function getGlowClass(level: SeverityLevel): string {
   return `glow-${level}`;
+}
+
+/**
+ * Get the Tailwind CSS background class for a severity level.
+ */
+export function getSeverityBgClass(level: SeverityLevel): string {
+  const map: Record<SeverityLevel, string> = {
+    nominal: 'bg-green-500/10 border-green-500/30',
+    advisory: 'bg-blue-500/10 border-blue-500/30',
+    caution: 'bg-yellow-500/10 border-yellow-500/30',
+    warning: 'bg-orange-500/10 border-orange-500/30',
+    critical: 'bg-red-500/10 border-red-500/30',
+  };
+  return map[level];
 }
 
 /**

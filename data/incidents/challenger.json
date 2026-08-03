@@ -1,0 +1,65 @@
+{
+  "id": "INC-001",
+  "name": "Space Shuttle Challenger Disaster",
+  "mission": "STS-51-L",
+  "date": "1986-01-28",
+  "vehicle": "Space Shuttle Challenger (OV-099)",
+  "outcome": "Loss of vehicle and crew",
+  "crew_size": 7,
+  "fatalities": 7,
+  "phase": "Ascent - 73 seconds after launch",
+  "summary": "Space Shuttle Challenger broke apart 73 seconds into flight on January 28, 1986, due to failure of an O-ring seal in the right solid rocket booster. The failure was caused by cold temperatures at launch (36 degrees F) degrading the rubber O-ring's ability to seal the joint between booster segments. Hot combustion gases escaped through the failed seal, impinging on the external tank and causing structural failure.",
+  "root_causes": {
+    "technical": "O-ring elastomer lost resilience below 53 degrees F, failing to seal the field joint. Hot gas blow-by eroded the primary O-ring and breached the secondary seal.",
+    "organizational": "NASA managers overrode engineer concerns about launching in cold weather. Morton Thiokol engineers explicitly recommended against launch but were overruled by management under schedule pressure. NASA's 'prove it's unsafe' culture inverted the burden of proof from the design requirement of 'prove it's safe'.",
+    "cultural": "Normalization of deviance - O-ring erosion had been observed on previous flights and was reclassified from a launch constraint to an 'acceptable risk'. The Acceptable Erosion working group normalized a design violation into standard operations."
+  },
+  "key_decisions": [
+    {
+      "date": "1986-01-27",
+      "decision": "Teleconference between NASA and Morton Thiokol on launch readiness",
+      "actors": ["NASA Marshall Space Flight Center", "Morton Thiokol Engineering", "Morton Thiokol Management"],
+      "outcome": "Initial engineering recommendation of NO-GO overturned to GO after management caucus",
+      "sentinel_score": 0.95
+    },
+    {
+      "date": "1985-07-01",
+      "decision": "O-ring erosion reclassified from Criticality 1 constraint",
+      "actors": ["NASA Safety", "Shuttle Program Office"],
+      "outcome": "Known design flaw normalized - launches continued despite evidence",
+      "sentinel_score": 0.82
+    }
+  ],
+  "warning_signs": [
+    "O-ring erosion observed on STS-2 (1981) and subsequent flights",
+    "Blow-by (hot gas past primary O-ring) first observed on STS-51-C in cold weather (53 degrees F)",
+    "Roger Boisjoly memo (July 1985) warning of 'catastrophe of the highest order'",
+    "Thiokol engineers' explicit no-launch recommendation the night before",
+    "Record cold temperatures at launch pad (31 degrees F overnight)"
+  ],
+  "organizational_failures": [
+    "Schedule pressure from Teacher in Space program and State of the Union address",
+    "Inversion of burden of proof: engineers asked to 'prove it would fail' rather than 'prove it's safe'",
+    "Management override of engineering judgment",
+    "Normalization of deviance over 24 flights with observed erosion",
+    "Lack of independent safety oversight with authority to halt launch"
+  ],
+  "lessons_learned": [
+    "Engineering safety concerns must have formal authority to halt operations",
+    "The burden of proof must always be on proving flight safety, never on proving danger",
+    "Observed anomalies must never be normalized without full root cause resolution",
+    "Schedule pressure is the most dangerous form of organizational blindness",
+    "Independent technical oversight must be insulated from programmatic pressure"
+  ],
+  "sentinel_relevance": {
+    "pattern_type": "normalization_of_deviance",
+    "go_fever_score": 0.92,
+    "preventability_score": 0.95,
+    "key_parallel": "Known technical deficiency accepted under schedule pressure with management override of engineering"
+  },
+  "references": [
+    "Rogers Commission Report (1986)",
+    "Diane Vaughan, 'The Challenger Launch Decision' (1996)",
+    "Richard Feynman, Appendix F to Rogers Commission Report"
+  ]
+}

@@ -1,22 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Enable experimental features for App Router
-  experimental: {
-    serverActions: true,
+  images: {
+    domains: ['api.nasa.gov', 'images-assets.nasa.gov'],
   },
-  // Proxy API requests to FastAPI backend during development
   async rewrites() {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://localhost:8000/api/:path*',
+        destination: `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api/v1'}/:path*`,
       },
     ];
   },
-  // Custom webpack config for Three.js compatibility
   webpack: (config) => {
     config.externals = [...(config.externals || []), { canvas: 'canvas' }];
+    config.module.rules.push({
+      test: /\.(glsl|vs|fs|vert|frag)$/,
+      type: 'asset/source',
+    });
     return config;
   },
 };

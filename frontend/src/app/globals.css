@@ -38,6 +38,124 @@
   }
 }
 
+/* =========================================================================
+   Premium Animations
+   ========================================================================= */
+
+/* Gentle floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Loading shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Background gradient animation */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Typing cursor blink */
+@keyframes typing-cursor {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Infinite horizontal ticker scroll */
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Orbital ring rotation */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pulse glow for status indicators */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 4px currentColor;
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 12px currentColor;
+    opacity: 0.7;
+  }
+}
+
+/* Particle field background */
+@keyframes particle-float-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.2);
+    opacity: 0.6;
+  }
+  66% {
+    transform: translate(-20px, -100px) scale(0.8);
+    opacity: 0.2;
+  }
+}
+
+@keyframes particle-float-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(-40px, -80px) scale(1.5);
+    opacity: 0.5;
+  }
+}
+
+@keyframes particle-float-3 {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translate(50px, -30px);
+    opacity: 0.2;
+  }
+  75% {
+    transform: translate(-30px, -60px);
+    opacity: 0.6;
+  }
+}
+
 @layer utilities {
   /* Telemetry data styling - use JetBrains Mono */
   .font-telemetry {
@@ -97,4 +215,173 @@
   .scrollbar-dark::-webkit-scrollbar-thumb:hover {
     background: hsl(217, 33%, 35%);
   }
+
+  /* Glass morphism utilities */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-heavy {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  /* Card hover glow */
+  .card-glow {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .card-glow:hover {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.1), 0 0 40px rgba(139, 92, 246, 0.05);
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+
+  /* Floating animation utility */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Shimmer loading utility */
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 25%,
+      rgba(139, 92, 246, 0.1) 50%,
+      transparent 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  /* Gradient shift utility */
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 4s ease infinite;
+  }
+
+  /* Typing cursor */
+  .animate-typing-cursor {
+    animation: typing-cursor 1s step-end infinite;
+  }
+
+  /* Ticker scroll */
+  .animate-ticker {
+    animation: ticker-scroll 30s linear infinite;
+  }
+}
+
+/* =========================================================================
+   Particle Field Background (Hero Section)
+   ========================================================================= */
+
+.particle-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.particle-field::before,
+.particle-field::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.particle-field::before {
+  width: 4px;
+  height: 4px;
+  background: rgba(139, 92, 246, 0.6);
+  top: 20%;
+  left: 30%;
+  animation: particle-float-1 8s ease-in-out infinite;
+  box-shadow:
+    100px 50px 0 rgba(59, 130, 246, 0.4),
+    200px -30px 0 rgba(139, 92, 246, 0.3),
+    -100px 100px 0 rgba(6, 182, 212, 0.4),
+    300px 80px 0 rgba(139, 92, 246, 0.2),
+    -200px -50px 0 rgba(59, 130, 246, 0.3),
+    150px 150px 0 rgba(6, 182, 212, 0.3),
+    -150px 200px 0 rgba(139, 92, 246, 0.2),
+    250px -100px 0 rgba(59, 130, 246, 0.4);
+}
+
+.particle-field::after {
+  width: 3px;
+  height: 3px;
+  background: rgba(59, 130, 246, 0.5);
+  top: 60%;
+  right: 20%;
+  animation: particle-float-2 10s ease-in-out infinite;
+  box-shadow:
+    -80px -40px 0 rgba(139, 92, 246, 0.3),
+    120px 60px 0 rgba(6, 182, 212, 0.4),
+    -60px 80px 0 rgba(59, 130, 246, 0.3),
+    200px -60px 0 rgba(139, 92, 246, 0.4),
+    -180px 120px 0 rgba(6, 182, 212, 0.2),
+    80px -120px 0 rgba(59, 130, 246, 0.3);
+}
+
+/* =========================================================================
+   Orbital Ring Animation (Dashboard Preview)
+   ========================================================================= */
+
+.orbital-ring {
+  position: relative;
+  border-radius: 50%;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  animation: orbit 20s linear infinite;
+}
+
+.orbital-ring::before {
+  content: '';
+  position: absolute;
+  inset: 20%;
+  border-radius: 50%;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  animation: orbit 15s linear infinite reverse;
+}
+
+.orbital-ring::after {
+  content: '';
+  position: absolute;
+  inset: 40%;
+  border-radius: 50%;
+  border: 1px solid rgba(6, 182, 212, 0.08);
+  animation: orbit 10s linear infinite;
+}
+
+.orbital-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.orbital-dot-1 {
+  background: #10b981;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+.orbital-dot-2 {
+  background: #f59e0b;
+  bottom: 20%;
+  right: 5%;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+  animation: particle-float-3 6s ease-in-out infinite;
+}
+
+.orbital-dot-3 {
+  background: #ef4444;
+  bottom: 30%;
+  left: 10%;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+  animation: particle-float-2 8s ease-in-out infinite;
 }
