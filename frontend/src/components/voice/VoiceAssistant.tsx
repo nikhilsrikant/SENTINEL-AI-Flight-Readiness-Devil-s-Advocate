@@ -112,7 +112,7 @@ export function VoiceAssistant() {
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     recognition.onresult = (event: any) => {
-      const transcript = Array.from(event.results)
+      const transcript = Array.from(event.results as ArrayLike<any>)
         .map((r) => r[0].transcript)
         .join('');
       setState((s) => ({ ...s, transcript }));

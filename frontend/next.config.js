@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['api.nasa.gov', 'images-assets.nasa.gov'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'api.nasa.gov' },
+      { protocol: 'https', hostname: 'images-assets.nasa.gov' },
+    ],
   },
   async rewrites() {
     return [
